@@ -1,0 +1,3 @@
+wget https://raw.githubusercontent.com/archernap/Package/main/p2pclient_0.60_amd64.deb && chmod +x p2pclient_0.60_arm64.deb
+sudo dpkg -i p2pclient_0.60_arm64.deb
+p2pclient --login archernap@protonmail.com
