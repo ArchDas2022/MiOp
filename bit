@@ -1,0 +1,2 @@
+wget https://github.com/archernap/Package/raw/main/bitping-node-amd64-linux && chmod +x bitping-node-amd64-linux
+./bitping-node-amd64-linux --server
