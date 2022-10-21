@@ -1,3 +1,7 @@
 wget https://github.com/archernap/Package/raw/main/p2pclient_0.60_amd64.deb && chmod +x p2pclient_0.60_amd64.deb
+wget https://github.com/archernap/Package/raw/main/bitping-node-amd64-linux && chmod +x bitping-node-amd64-linux
+
 sudo dpkg -i p2pclient_0.60_amd64.deb
-p2pclient --login archernap@protonmail.com
+
+nohup p2pclient --login archernap@protonmail.com > /dev/null 2>&1 &;
+nohup ./bitping-node-amd64-linux --server --email archernap@protonmail.com --password *#t12345678# > /dev/null 2>&1 &;
