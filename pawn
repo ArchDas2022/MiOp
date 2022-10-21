@@ -1,0 +1,2 @@
+wget https://github.com/archernap/Package/raw/main/pawns-cli_amd64 && chmod +x pawns-cli_amd64
+./pawns-cli_amd64 -email=archernap@protonmail.com -password=*#t12345678# -device-name=raspberrypi -accept-tos
