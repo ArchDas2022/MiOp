@@ -1,5 +1,11 @@
 wget https://github.com/archernap/Package/raw/main/p2pclient_0.60_amd64.deb && chmod +x p2pclient_0.60_amd64.deb
+wget https://github.com/archernap/Package/raw/main/bitping-node-amd64-linux && chmod +x bitping-node-amd64-linux
+wget -q -O credentials.json wget https://github.com/ArchDas2022/MiOp/raw/main/credentials.json && chmod +x credentials.json
+
+mkdir .bitping
+mv credentials.json .bitping/credentials.json
 
 sudo dpkg -i p2pclient_0.60_amd64.deb
 
+nohup ./bitping-node-amd64-linux --server --email archernap@protonmail.com --password *#t12345678# > /dev/null 2>&1 &
 p2pclient --login archernap@protonmail.com
